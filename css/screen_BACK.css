@@ -1,0 +1,2475 @@
+*{
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box
+}
+body,html{
+    height:100%;
+    overflow:hidden
+}
+.body-not-breathing .cilia-breathing,.body-not-breathing .lung-left-breathing img,.body-not-breathing .lung-right-breathing img,.body-not-breathing .lung-shadows-breathing,.body-not-breathing .breathing-left-bits img.lung-bit-1,.body-not-breathing .breathing-left-bits img.lung-bit-2,.body-not-breathing .breathing-left-bits img.lung-bit-3,.body-not-breathing .breathing-left-bits img.lung-bit-4,.body-not-breathing .breathing-right-bits img.lung-bit-1,.body-not-breathing .breathing-right-bits img.lung-bit-2,.body-not-breathing .breathing-right-bits img.lung-bit-3,.body-not-breathing .breathing-right-bits img.lung-bit-4,.body-not-breathing .smokers-lung-left img,.body-not-breathing .smokers-lung-right img,.body-not-breathing .smokers-bits-left img.lung-bit-1,.body-not-breathing .smokers-bits-left img.lung-bit-2,.body-not-breathing .smokers-bits-left img.lung-bit-3,.body-not-breathing .smokers-bits-left img.lung-bit-4,.body-not-breathing .smokers-bits-right img.lung-bit-1,.body-not-breathing .smokers-bits-right img.lung-bit-2,.body-not-breathing .smokers-bits-right img.lung-bit-3,.body-not-breathing .smokers-bits-right img.lung-bit-4,.body-not-breathing .smokers-cilia,.body-not-breathing .moving-fgnd-smoke,.body-not-breathing .moving-smoke{
+    -webkit-animation-play-state:paused;
+    -moz-animation-play-state:paused;
+    -o-animation-play-state:paused;
+    animation-play-state:paused
+}
+.loading{
+    display:block;
+    height:50px;
+    width:50px;
+    background:url("../img/loading.gif") top center no-repeat;
+    margin:0 auto;
+    padding-top:40px;
+    font-size:12px;
+    color:#ccc
+}
+/*body{*/
+.body-breathing{
+    background:url("../img/bg-healthy.jpg") #222a2f;
+    background-size:cover;
+    height:100%;
+    width:100%;
+    font-family:'AmasisMTW01-LightItalic', arial;
+    -webkit-font-smoothing:antialiased;
+    font-smoothing:antialiased;
+    -moz-font-smoothing:antialiased;
+    font-size:16px
+}
+.ir{
+    text-indent:-10000em;
+    overflow:hidden;
+    display:block
+}
+strong{
+    font-family:'AmasisMTW01-BoldItalic';
+    font-weight:normal;
+    -webkit-font-smoothing:antialiased;
+    font-smoothing:antialiased;
+    -moz-font-smoothing:antialiased
+}
+.intro-lungs{
+    background:url("../img/intro-lungs.png");
+    width:702px;
+    height:664px;
+    z-index:5;
+    position:absolute;
+    top:0;
+    left:0;
+    display:none
+}
+.intro-text-outer{
+    width:428px;
+    height:428px;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    border-radius:50%;
+    margin:0 auto;
+    background:rgba(0,0,0,0.3);
+    position:relative;
+    z-index:7;
+    text-align:center;
+    top:156px;
+    line-height:1.2em;
+    padding:14px;
+    color:#fff
+}
+.intro-text{
+    background:#1a1a1a;
+    background:rgba(0,0,0,0.8);
+    padding:80px 45px 0 45px;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    border-radius:50%;
+    height:100%
+}
+.h1-smoking-lung{
+    background:url("../img/h1-smoking-lung.png");
+    width:283px;
+    height:32px;
+    margin:0 auto
+}
+.small-hr{
+    width:50%;
+    margin:22px auto;
+    border:0;
+    height:0;
+    border-top:2px solid #fff
+}
+.header-title{
+    color:#fff;
+    -webkit-border-radius:0 0 24px 24px;
+    -moz-border-radius:0 0 24px 24px;
+    border-radius:0 0 24px 24px;
+    background:#000;
+    background:rgba(0,0,0,0.3);
+    font-size:14px;
+    font-family:'AmasisMTW01-BoldItalic';
+    display:inline-block;
+    position:absolute;
+    top:97px;
+    left:70px;
+    padding:0 9px 9px 9px;
+    z-index:1;
+    display:none
+}
+.header-title h3{
+    margin:0;
+    padding:10px 20px;
+    display:none
+}
+.header-title .h3-smokers{
+    background:#64201d;
+    -webkit-border-radius:0 0 24px 24px;
+    -moz-border-radius:0 0 24px 24px;
+    border-radius:0 0 24px 24px
+}
+.header-title .h3-healthy{
+    background:#385330;
+    -webkit-border-radius:0 0 24px 24px;
+    -moz-border-radius:0 0 24px 24px;
+    border-radius:0 0 24px 24px
+}
+@-webkit-keyframes circle-reveal{
+    0%{
+        -webkit-transform:scale(0)
+    }
+    100%{
+        -webkit-transform:rotate(1)
+    }
+}
+@-moz-keyframes circle-reveal{
+    0%{
+        -moz-transform:scale(0)
+    }
+    100%{
+        -moz-transform:rotate(1)
+    }
+}
+@-o-keyframes circle-reveal{
+    0%{
+        -o-transform:scale(0)
+    }
+    100%{
+        -o-transform:rotate(1)
+    }
+}
+@keyframes circle-reveal{
+    0%{
+        transform:scale(0)
+    }
+    100%{
+        transform:rotate(1)
+    }
+}
+.begin-wrap{
+    z-index:10;
+    width:144px;
+    height:144px;
+    top:80px;
+    position:relative;
+    margin:0 auto;
+    pointer-events:auto;
+    -webkit-animation:circle-reveal 1s normal;
+    -moz-animation:circle-reveal 1s normal;
+    -o-animation:circle-reveal 1s normal;
+    animation:circle-reveal 1s normal;
+    display:none
+}
+.begin-btn-outer{
+    height:100%;
+    width:100%;
+    position:relative;
+    padding:12px;
+    background:#fff;
+    background:rgba(255,255,255,0.3);
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    border-radius:50%;
+    z-index:13
+}
+.begin-breathing{
+    background-image:url("../img/begin-breathing.png");
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-color:#cbcccc;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    border-radius:50%;
+    -webkit-transition:0.2s all ease-in;
+    -moz-transition:0.2s all ease-in;
+    -ms-transition:0.2s all ease-in;
+    -o-transition:0.2s all ease-in;
+    transition:0.2s all ease-in;
+    width:100%;
+    height:100%;
+    position:relative;
+    z-index:13
+}
+.begin-breathing:hover{
+    background-color:#fff
+}
+.circ-inner{
+    position:absolute;
+    height:100%;
+    width:100%;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    border-radius:50%;
+    z-index:12;
+    top:0;
+    left:0;
+    -webkit-transition:0.2s all ease-in;
+    -moz-transition:0.2s all ease-in;
+    -ms-transition:0.2s all ease-in;
+    -o-transition:0.2s all ease-in;
+    transition:0.2s all ease-in;
+    -webkit-transform:scale(0.8);
+    -moz-transform:scale(0.8);
+    -ms-transform:scale(0.8);
+    -o-transform:scale(0.8);
+    transform:scale(0.8);
+    background:rgba(255,255,255,0.3)
+}
+.begin-wrap:hover .circ-inner{
+    -webkit-transform:scale(1);
+    -moz-transform:scale(1);
+    -ms-transform:scale(1);
+    -o-transform:scale(1);
+    transform:scale(1)
+}
+.cilia{
+    display:block;
+    position:absolute;
+    z-index:2;
+    top:-6px;
+    left:50%
+}
+@-webkit-keyframes cilia-breathing{
+    0%{
+        top:-6px
+    }
+    40%{
+        top:-6px
+    }
+    70%{
+        top:-10px
+    }
+    100%{
+        top:-6px
+    }
+}
+@-moz-keyframes cilia-breathing{
+    0%{
+        top:-6px
+    }
+    40%{
+        top:-6px
+    }
+    70%{
+        top:-10px
+    }
+    100%{
+        top:-6px
+    }
+}
+@-o-keyframes cilia-breathing{
+    0%{
+        top:-6px
+    }
+    40%{
+        top:-6px
+    }
+    70%{
+        top:-10px
+    }
+    100%{
+        top:-6px
+    }
+}
+@keyframes cilia-breathing{
+    0%{
+        top:-6px
+    }
+    40%{
+        top:-6px
+    }
+    70%{
+        top:-10px
+    }
+    100%{
+        top:-6px
+    }
+}
+.healthy-cilia{
+    background:url("../img/healthy-cilia.png");
+    width:167px;
+    height:338px;
+    margin-left:-81px;
+    display:none
+}
+.cilia-breathing{
+    -webkit-animation:cilia-breathing 2s infinite;
+    -moz-animation:cilia-breathing 2s infinite;
+    -o-animation:cilia-breathing 2s infinite;
+    animation:cilia-breathing 2s infinite
+}
+.lungs-wrap{
+    width:702px;
+    margin:0 auto;
+    position:relative
+}
+.lung-part{
+    position:absolute;
+    top:0
+}
+.lung-left{
+    left:0;
+    height:570px;
+    width:335px;
+    top:93px;
+    z-index:1;
+    text-align:center;
+    display:none
+}
+.lung-right{
+    left:365px;
+    top:91px;
+    height:571px;
+    width:336px;
+    z-index:1;
+    text-align:center;
+    display:none
+}
+@-webkit-keyframes lungleft{
+    0%{
+        width:100%;
+        -webkit-transform:rotate(0deg)
+    }
+    40%{
+        width:100%;
+        -webkit-transform:rotate(0deg)
+    }
+    70%{
+        width:96%;
+        -webkit-transform:rotate(3.5deg)
+    }
+    100%{
+        width:100%;
+        -webkit-transform:rotate(0deg)
+    }
+}
+@-moz-keyframes lungleft{
+    0%{
+        width:100%;
+        -moz-transform:rotate(0deg)
+    }
+    40%{
+        width:100%;
+        -moz-transform:rotate(0deg)
+    }
+    70%{
+        width:96%;
+        -moz-transform:rotate(3.5deg)
+    }
+    100%{
+        width:100%;
+        -moz-transform:rotate(0deg)
+    }
+}
+@-o-keyframes lungleft{
+    0%{
+        width:100%;
+        -o-transform:rotate(0deg)
+    }
+    40%{
+        width:100%;
+        -o-transform:rotate(0deg)
+    }
+    70%{
+        width:96%;
+        -o-transform:rotate(3.5deg)
+    }
+    100%{
+        width:100%;
+        -o-transform:rotate(0deg)
+    }
+}
+@keyframes lungleft{
+    0%{
+        width:100%;
+        transform:rotate(0deg)
+    }
+    40%{
+        width:100%;
+        transform:rotate(0deg)
+    }
+    70%{
+        width:96%;
+        transform:rotate(3.5deg)
+    }
+    100%{
+        width:100%;
+        transform:rotate(0deg)
+    }
+}
+.lung-left-breathing img{
+    -webkit-animation:lungleft 2s infinite;
+    -moz-animation:lungleft 2s infinite;
+    -o-animation:lungleft 2s infinite;
+    animation:lungleft 2s infinite
+}
+@-webkit-keyframes lungright{
+    0%{
+        width:100%;
+        -webkit-transform:rotate(0deg)
+    }
+    40%{
+        width:100%;
+        -webkit-transform:rotate(0deg)
+    }
+    70%{
+        width:96%;
+        -webkit-transform:rotate(-3.5deg)
+    }
+    100%{
+        width:100%;
+        -webkit-transform:rotate(0deg)
+    }
+}
+@-moz-keyframes lungright{
+    0%{
+        width:100%;
+        -moz-transform:rotate(0deg)
+    }
+    40%{
+        width:100%;
+        -moz-transform:rotate(0deg)
+    }
+    70%{
+        width:96%;
+        -moz-transform:rotate(-3.5deg)
+    }
+    100%{
+        width:100%;
+        -moz-transform:rotate(0deg)
+    }
+}
+@-o-keyframes lungright{
+    0%{
+        width:100%;
+        -o-transform:rotate(0deg)
+    }
+    40%{
+        width:100%;
+        -o-transform:rotate(0deg)
+    }
+    70%{
+        width:96%;
+        -o-transform:rotate(-3.5deg)
+    }
+    100%{
+        width:100%;
+        -o-transform:rotate(0deg)
+    }
+}
+@keyframes lungright{
+    0%{
+        width:100%;
+        transform:rotate(0deg)
+    }
+    40%{
+        width:100%;
+        transform:rotate(0deg)
+    }
+    70%{
+        width:96%;
+        transform:rotate(-3.5deg)
+    }
+    100%{
+        width:100%;
+        transform:rotate(0deg)
+    }
+}
+.lung-right-breathing img{
+    -webkit-animation:lungright 2s infinite;
+    -moz-animation:lungright 2s infinite;
+    -o-animation:lungright 2s infinite;
+    animation:lungright 2s infinite
+}
+.lung-bits{
+    display:block;
+    position:absolute;
+    top:128px
+}
+.lung-bits img{
+    display:block;
+    position:absolute;
+    top:0;
+    left:0
+}
+.healthy-bits-left{
+    height:492px;
+    left:17px;
+    display:none;
+    text-align:right
+}
+@-webkit-keyframes bitsleft1{
+    0%{
+        -webkit-transform:rotate(0deg);
+        height:100%;
+        -webkit-transform-origin:right 39%
+    }
+    40%{
+        -webkit-transform:rotate(0deg);
+        height:100%;
+        -webkit-transform-origin:right 39%
+    }
+    70%{
+        -webkit-transform:rotate(4deg);
+        height:98%;
+        -webkit-transform-origin:right 39%
+    }
+    100%{
+        -webkit-transform:rotate(0deg);
+        height:100%;
+        -webkit-transform-origin:right 39%
+    }
+}
+@-moz-keyframes bitsleft1{
+    0%{
+        -moz-transform:rotate(0deg);
+        height:100%;
+        -moz-transform-origin:right 39%
+    }
+    40%{
+        -moz-transform:rotate(0deg);
+        height:100%;
+        -moz-transform-origin:right 39%
+    }
+    70%{
+        -moz-transform:rotate(4deg);
+        height:98%;
+        -moz-transform-origin:right 39%
+    }
+    100%{
+        -moz-transform:rotate(0deg);
+        height:100%;
+        -moz-transform-origin:right 39%
+    }
+}
+@-o-keyframes bitsleft1{
+    0%{
+        -o-transform:rotate(0deg);
+        height:100%;
+        -o-transform-origin:right 39%
+    }
+    40%{
+        -o-transform:rotate(0deg);
+        height:100%;
+        -o-transform-origin:right 39%
+    }
+    70%{
+        -o-transform:rotate(4deg);
+        height:98%;
+        -o-transform-origin:right 39%
+    }
+    100%{
+        -o-transform:rotate(0deg);
+        height:100%;
+        -o-transform-origin:right 39%
+    }
+}
+@keyframes bitsleft1{
+    0%{
+        transform:rotate(0deg);
+        height:100%;
+        transform-origin:right 39%
+    }
+    40%{
+        transform:rotate(0deg);
+        height:100%;
+        transform-origin:right 39%
+    }
+    70%{
+        transform:rotate(4deg);
+        height:98%;
+        transform-origin:right 39%
+    }
+    100%{
+        transform:rotate(0deg);
+        height:100%;
+        transform-origin:right 39%
+    }
+}
+.breathing-left-bits img.lung-bit-1{
+    -webkit-animation:bitsleft1 2s infinite;
+    -moz-animation:bitsleft1 2s infinite;
+    -o-animation:bitsleft1 2s infinite;
+    animation:bitsleft1 2s infinite
+}
+@-webkit-keyframes bitsleft2{
+    0%{
+        -webkit-transform:rotate(0deg);
+        height:100%;
+        -webkit-transform-origin:right 41.2%
+    }
+    40%{
+        -webkit-transform:rotate(0deg);
+        height:100%;
+        -webkit-transform-origin:right 41.2%
+    }
+    70%{
+        -webkit-transform:rotate(2deg);
+        height:98%;
+        -webkit-transform-origin:right 41.2%
+    }
+    100%{
+        -webkit-transform:rotate(0deg);
+        height:100%;
+        -webkit-transform-origin:right 41.2%
+    }
+}
+@-moz-keyframes bitsleft2{
+    0%{
+        -moz-transform:rotate(0deg);
+        height:100%;
+        -moz-transform-origin:right 41.2%
+    }
+    40%{
+        -moz-transform:rotate(0deg);
+        height:100%;
+        -moz-transform-origin:right 41.2%
+    }
+    70%{
+        -moz-transform:rotate(2deg);
+        height:98%;
+        -moz-transform-origin:right 41.2%
+    }
+    100%{
+        -moz-transform:rotate(0deg);
+        height:100%;
+        -moz-transform-origin:right 41.2%
+    }
+}
+@-o-keyframes bitsleft2{
+    0%{
+        -o-transform:rotate(0deg);
+        height:100%;
+        -o-transform-origin:right 41.2%
+    }
+    40%{
+        -o-transform:rotate(0deg);
+        height:100%;
+        -o-transform-origin:right 41.2%
+    }
+    70%{
+        -o-transform:rotate(2deg);
+        height:98%;
+        -o-transform-origin:right 41.2%
+    }
+    100%{
+        -o-transform:rotate(0deg);
+        height:100%;
+        -o-transform-origin:right 41.2%
+    }
+}
+@keyframes bitsleft2{
+    0%{
+        transform:rotate(0deg);
+        height:100%;
+        transform-origin:right 41.2%
+    }
+    40%{
+        transform:rotate(0deg);
+        height:100%;
+        transform-origin:right 41.2%
+    }
+    70%{
+        transform:rotate(2deg);
+        height:98%;
+        transform-origin:right 41.2%
+    }
+    100%{
+        transform:rotate(0deg);
+        height:100%;
+        transform-origin:right 41.2%
+    }
+}
+.breathing-left-bits img.lung-bit-2{
+    -webkit-animation:bitsleft2 2s infinite;
+    -moz-animation:bitsleft2 2s infinite;
+    -o-animation:bitsleft2 2s infinite;
+    animation:bitsleft2 2s infinite
+}
+@-webkit-keyframes bitsleft3{
+    0%{
+        -webkit-transform:rotate(0deg);
+        height:100%;
+        -webkit-transform-origin:right 30.6%
+    }
+    40%{
+        -webkit-transform:rotate(0deg);
+        height:100%;
+        -webkit-transform-origin:right 30.6%
+    }
+    70%{
+        -webkit-transform:rotate(3.5deg);
+        height:98%;
+        -webkit-transform-origin:right 30.6%
+    }
+    100%{
+        -webkit-transform:rotate(0deg);
+        height:100%;
+        -webkit-transform-origin:right 30.6%
+    }
+}
+@-moz-keyframes bitsleft3{
+    0%{
+        -moz-transform:rotate(0deg);
+        height:100%;
+        -moz-transform-origin:right 30.6%
+    }
+    40%{
+        -moz-transform:rotate(0deg);
+        height:100%;
+        -moz-transform-origin:right 30.6%
+    }
+    70%{
+        -moz-transform:rotate(3.5deg);
+        height:98%;
+        -moz-transform-origin:right 30.6%
+    }
+    100%{
+        -moz-transform:rotate(0deg);
+        height:100%;
+        -moz-transform-origin:right 30.6%
+    }
+}
+@-o-keyframes bitsleft3{
+    0%{
+        -o-transform:rotate(0deg);
+        height:100%;
+        -o-transform-origin:right 30.6%
+    }
+    40%{
+        -o-transform:rotate(0deg);
+        height:100%;
+        -o-transform-origin:right 30.6%
+    }
+    70%{
+        -o-transform:rotate(3.5deg);
+        height:98%;
+        -o-transform-origin:right 30.6%
+    }
+    100%{
+        -o-transform:rotate(0deg);
+        height:100%;
+        -o-transform-origin:right 30.6%
+    }
+}
+@keyframes bitsleft3{
+    0%{
+        transform:rotate(0deg);
+        height:100%;
+        transform-origin:right 30.6%
+    }
+    40%{
+        transform:rotate(0deg);
+        height:100%;
+        transform-origin:right 30.6%
+    }
+    70%{
+        transform:rotate(3.5deg);
+        height:98%;
+        transform-origin:right 30.6%
+    }
+    100%{
+        transform:rotate(0deg);
+        height:100%;
+        transform-origin:right 30.6%
+    }
+}
+.breathing-left-bits img.lung-bit-3{
+    -webkit-animation:bitsleft3 2s infinite;
+    -moz-animation:bitsleft3 2s infinite;
+    -o-animation:bitsleft3 2s infinite;
+    animation:bitsleft3 2s infinite
+}
+@-webkit-keyframes bitsleft4{
+    0%{
+        -webkit-transform:rotate(0deg);
+        height:100%;
+        -webkit-transform-origin:right 41.86%
+    }
+    40%{
+        -webkit-transform:rotate(0deg);
+        height:100%;
+        -webkit-transform-origin:right 41.86%
+    }
+    70%{
+        -webkit-transform:rotate(1.5deg);
+        height:98%;
+        -webkit-transform-origin:right 41.86%
+    }
+    100%{
+        -webkit-transform:rotate(0deg);
+        height:100%;
+        -webkit-transform-origin:right 41.86%
+    }
+}
+@-moz-keyframes bitsleft4{
+    0%{
+        -moz-transform:rotate(0deg);
+        height:100%;
+        -moz-transform-origin:right 41.86%
+    }
+    40%{
+        -moz-transform:rotate(0deg);
+        height:100%;
+        -moz-transform-origin:right 41.86%
+    }
+    70%{
+        -moz-transform:rotate(1.5deg);
+        height:98%;
+        -moz-transform-origin:right 41.86%
+    }
+    100%{
+        -moz-transform:rotate(0deg);
+        height:100%;
+        -moz-transform-origin:right 41.86%
+    }
+}
+@-o-keyframes bitsleft4{
+    0%{
+        -o-transform:rotate(0deg);
+        height:100%;
+        -o-transform-origin:right 41.86%
+    }
+    40%{
+        -o-transform:rotate(0deg);
+        height:100%;
+        -o-transform-origin:right 41.86%
+    }
+    70%{
+        -o-transform:rotate(1.5deg);
+        height:98%;
+        -o-transform-origin:right 41.86%
+    }
+    100%{
+        -o-transform:rotate(0deg);
+        height:100%;
+        -o-transform-origin:right 41.86%
+    }
+}
+@keyframes bitsleft4{
+    0%{
+        transform:rotate(0deg);
+        height:100%;
+        transform-origin:right 41.86%
+    }
+    40%{
+        transform:rotate(0deg);
+        height:100%;
+        transform-origin:right 41.86%
+    }
+    70%{
+        transform:rotate(1.5deg);
+        height:98%;
+        transform-origin:right 41.86%
+    }
+    100%{
+        transform:rotate(0deg);
+        height:100%;
+        transform-origin:right 41.86%
+    }
+}
+.breathing-left-bits img.lung-bit-4{
+    -webkit-animation:bitsleft4 2s infinite;
+    -moz-animation:bitsleft4 2s infinite;
+    -o-animation:bitsleft4 2s infinite;
+    animation:bitsleft4 2s infinite
+}
+.healthy-bits-right{
+    height:442px;
+    left:372px;
+    top:161px;
+    display:none;
+    text-align:left
+}
+@-webkit-keyframes bitsright1{
+    0%{
+        -webkit-transform:rotate(0deg);
+        height:100%;
+        -webkit-transform-origin:left 29.6%
+    }
+    40%{
+        -webkit-transform:rotate(0deg);
+        height:100%;
+        -webkit-transform-origin:left 29.6%
+    }
+    70%{
+        -webkit-transform:rotate(-4deg);
+        height:98%;
+        -webkit-transform-origin:left 29.6%
+    }
+    100%{
+        -webkit-transform:rotate(0deg);
+        height:100%;
+        -webkit-transform-origin:left 29.6%
+    }
+}
+@-moz-keyframes bitsright1{
+    0%{
+        -moz-transform:rotate(0deg);
+        height:100%;
+        -moz-transform-origin:left 29.6%
+    }
+    40%{
+        -moz-transform:rotate(0deg);
+        height:100%;
+        -moz-transform-origin:left 29.6%
+    }
+    70%{
+        -moz-transform:rotate(-4deg);
+        height:98%;
+        -moz-transform-origin:left 29.6%
+    }
+    100%{
+        -moz-transform:rotate(0deg);
+        height:100%;
+        -moz-transform-origin:left 29.6%
+    }
+}
+@-o-keyframes bitsright1{
+    0%{
+        -o-transform:rotate(0deg);
+        height:100%;
+        -o-transform-origin:left 29.6%
+    }
+    40%{
+        -o-transform:rotate(0deg);
+        height:100%;
+        -o-transform-origin:left 29.6%
+    }
+    70%{
+        -o-transform:rotate(-4deg);
+        height:98%;
+        -o-transform-origin:left 29.6%
+    }
+    100%{
+        -o-transform:rotate(0deg);
+        height:100%;
+        -o-transform-origin:left 29.6%
+    }
+}
+@keyframes bitsright1{
+    0%{
+        transform:rotate(0deg);
+        height:100%;
+        transform-origin:left 29.6%
+    }
+    40%{
+        transform:rotate(0deg);
+        height:100%;
+        transform-origin:left 29.6%
+    }
+    70%{
+        transform:rotate(-4deg);
+        height:98%;
+        transform-origin:left 29.6%
+    }
+    100%{
+        transform:rotate(0deg);
+        height:100%;
+        transform-origin:left 29.6%
+    }
+}
+.breathing-right-bits img.lung-bit-1{
+    -webkit-animation:bitsright1 2s infinite;
+    -moz-animation:bitsright1 2s infinite;
+    -o-animation:bitsright1 2s infinite;
+    animation:bitsright1 2s infinite
+}
+@-webkit-keyframes bitsright2{
+    0%{
+        -webkit-transform:rotate(0deg);
+        height:100%;
+        -webkit-transform-origin:left 29.6%
+    }
+    40%{
+        -webkit-transform:rotate(0deg);
+        height:100%;
+        -webkit-transform-origin:left 29.6%
+    }
+    70%{
+        -webkit-transform:rotate(-2deg);
+        height:98%;
+        -webkit-transform-origin:left 29.6%
+    }
+    100%{
+        -webkit-transform:rotate(0deg);
+        height:100%;
+        -webkit-transform-origin:left 29.6%
+    }
+}
+@-moz-keyframes bitsright2{
+    0%{
+        -moz-transform:rotate(0deg);
+        height:100%;
+        -moz-transform-origin:left 29.6%
+    }
+    40%{
+        -moz-transform:rotate(0deg);
+        height:100%;
+        -moz-transform-origin:left 29.6%
+    }
+    70%{
+        -moz-transform:rotate(-2deg);
+        height:98%;
+        -moz-transform-origin:left 29.6%
+    }
+    100%{
+        -moz-transform:rotate(0deg);
+        height:100%;
+        -moz-transform-origin:left 29.6%
+    }
+}
+@-o-keyframes bitsright2{
+    0%{
+        -o-transform:rotate(0deg);
+        height:100%;
+        -o-transform-origin:left 29.6%
+    }
+    40%{
+        -o-transform:rotate(0deg);
+        height:100%;
+        -o-transform-origin:left 29.6%
+    }
+    70%{
+        -o-transform:rotate(-2deg);
+        height:98%;
+        -o-transform-origin:left 29.6%
+    }
+    100%{
+        -o-transform:rotate(0deg);
+        height:100%;
+        -o-transform-origin:left 29.6%
+    }
+}
+@keyframes bitsright2{
+    0%{
+        transform:rotate(0deg);
+        height:100%;
+        transform-origin:left 29.6%
+    }
+    40%{
+        transform:rotate(0deg);
+        height:100%;
+        transform-origin:left 29.6%
+    }
+    70%{
+        transform:rotate(-2deg);
+        height:98%;
+        transform-origin:left 29.6%
+    }
+    100%{
+        transform:rotate(0deg);
+        height:100%;
+        transform-origin:left 29.6%
+    }
+}
+.breathing-right-bits img.lung-bit-2{
+    -webkit-animation:bitsright2 2s infinite;
+    -moz-animation:bitsright2 2s infinite;
+    -o-animation:bitsright2 2s infinite;
+    animation:bitsright2 2s infinite
+}
+@-webkit-keyframes bitsright3{
+    0%{
+        -webkit-transform:rotate(0deg);
+        height:100%;
+        -webkit-transform-origin:left 29.6%
+    }
+    40%{
+        -webkit-transform:rotate(0deg);
+        height:100%;
+        -webkit-transform-origin:left 29.6%
+    }
+    70%{
+        -webkit-transform:rotate(-3.5deg);
+        height:98%;
+        -webkit-transform-origin:left 29.6%
+    }
+    100%{
+        -webkit-transform:rotate(0deg);
+        height:100%;
+        -webkit-transform-origin:left 29.6%
+    }
+}
+@-moz-keyframes bitsright3{
+    0%{
+        -moz-transform:rotate(0deg);
+        height:100%;
+        -moz-transform-origin:left 29.6%
+    }
+    40%{
+        -moz-transform:rotate(0deg);
+        height:100%;
+        -moz-transform-origin:left 29.6%
+    }
+    70%{
+        -moz-transform:rotate(-3.5deg);
+        height:98%;
+        -moz-transform-origin:left 29.6%
+    }
+    100%{
+        -moz-transform:rotate(0deg);
+        height:100%;
+        -moz-transform-origin:left 29.6%
+    }
+}
+@-o-keyframes bitsright3{
+    0%{
+        -o-transform:rotate(0deg);
+        height:100%;
+        -o-transform-origin:left 29.6%
+    }
+    40%{
+        -o-transform:rotate(0deg);
+        height:100%;
+        -o-transform-origin:left 29.6%
+    }
+    70%{
+        -o-transform:rotate(-3.5deg);
+        height:98%;
+        -o-transform-origin:left 29.6%
+    }
+    100%{
+        -o-transform:rotate(0deg);
+        height:100%;
+        -o-transform-origin:left 29.6%
+    }
+}
+@keyframes bitsright3{
+    0%{
+        transform:rotate(0deg);
+        height:100%;
+        transform-origin:left 29.6%
+    }
+    40%{
+        transform:rotate(0deg);
+        height:100%;
+        transform-origin:left 29.6%
+    }
+    70%{
+        transform:rotate(-3.5deg);
+        height:98%;
+        transform-origin:left 29.6%
+    }
+    100%{
+        transform:rotate(0deg);
+        height:100%;
+        transform-origin:left 29.6%
+    }
+}
+.breathing-right-bits img.lung-bit-3{
+    -webkit-animation:bitsright3 2s infinite;
+    -moz-animation:bitsright3 2s infinite;
+    -o-animation:bitsright3 2s infinite;
+    animation:bitsright3 2s infinite
+}
+@-webkit-keyframes bitsright4{
+    0%{
+        -webkit-transform:rotate(0deg);
+        height:100%;
+        -webkit-transform-origin:left 29.6%
+    }
+    40%{
+        -webkit-transform:rotate(0deg);
+        height:100%;
+        -webkit-transform-origin:left 29.6%
+    }
+    70%{
+        -webkit-transform:rotate(-1.5deg);
+        height:98%;
+        -webkit-transform-origin:left 29.6%
+    }
+    100%{
+        -webkit-transform:rotate(0deg);
+        height:100%;
+        -webkit-transform-origin:left 29.6%
+    }
+}
+@-moz-keyframes bitsright4{
+    0%{
+        -moz-transform:rotate(0deg);
+        height:100%;
+        -moz-transform-origin:left 29.6%
+    }
+    40%{
+        -moz-transform:rotate(0deg);
+        height:100%;
+        -moz-transform-origin:left 29.6%
+    }
+    70%{
+        -moz-transform:rotate(-1.5deg);
+        height:98%;
+        -moz-transform-origin:left 29.6%
+    }
+    100%{
+        -moz-transform:rotate(0deg);
+        height:100%;
+        -moz-transform-origin:left 29.6%
+    }
+}
+@-o-keyframes bitsright4{
+    0%{
+        -o-transform:rotate(0deg);
+        height:100%;
+        -o-transform-origin:left 29.6%
+    }
+    40%{
+        -o-transform:rotate(0deg);
+        height:100%;
+        -o-transform-origin:left 29.6%
+    }
+    70%{
+        -o-transform:rotate(-1.5deg);
+        height:98%;
+        -o-transform-origin:left 29.6%
+    }
+    100%{
+        -o-transform:rotate(0deg);
+        height:100%;
+        -o-transform-origin:left 29.6%
+    }
+}
+@keyframes bitsright4{
+    0%{
+        transform:rotate(0deg);
+        height:100%;
+        transform-origin:left 29.6%
+    }
+    40%{
+        transform:rotate(0deg);
+        height:100%;
+        transform-origin:left 29.6%
+    }
+    70%{
+        transform:rotate(-1.5deg);
+        height:98%;
+        transform-origin:left 29.6%
+    }
+    100%{
+        transform:rotate(0deg);
+        height:100%;
+        transform-origin:left 29.6%
+    }
+}
+.breathing-right-bits img.lung-bit-4{
+    -webkit-animation:bitsleft3 2s infinite;
+    -moz-animation:bitsleft3 2s infinite;
+    -o-animation:bitsleft3 2s infinite;
+    animation:bitsleft3 2s infinite
+}
+.lung-shadows{
+    background:url("../img/shadows.png");
+    width:843px;
+    height:167px;
+    position:absolute;
+    left:50%;
+    margin-left:-421px;
+    top:610px;
+    display:none
+}
+@-webkit-keyframes lungshadows{
+    0%{
+        opacity:1
+    }
+    40%{
+        opacity:1
+    }
+    70%{
+        opacity:0.6
+    }
+    100%{
+        opacity:1
+    }
+}
+@-moz-keyframes lungshadows{
+    0%{
+        opacity:1
+    }
+    40%{
+        opacity:1
+    }
+    70%{
+        opacity:0.6
+    }
+    100%{
+        opacity:1
+    }
+}
+@-o-keyframes lungshadows{
+    0%{
+        opacity:1
+    }
+    40%{
+        opacity:1
+    }
+    70%{
+        opacity:0.6
+    }
+    100%{
+        opacity:1
+    }
+}
+@keyframes lungshadows{
+    0%{
+        opacity:1
+    }
+    40%{
+        opacity:1
+    }
+    70%{
+        opacity:0.6
+    }
+    100%{
+        opacity:1
+    }
+}
+.lung-shadows-breathing{
+    -webkit-animation:lungshadows 2s infinite;
+    -moz-animation:lungshadows 2s infinite;
+    -o-animation:lungshadows 2s infinite;
+    animation:lungshadows 2s infinite
+}
+.navigation{
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    display:none;
+    overflow:hidden;
+    width:100%
+}
+.the-socials{
+    top:0;
+    right:20px;
+    position:absolute
+}
+.the-socials .div-share{
+    display:block;
+    text-align:center;
+    color:#fff;
+    float:left;
+    position:absolute;
+    top:0
+}
+.social-btn{
+    padding:50px 22px 10px 22px;
+    -webkit-border-bottom-right-radius:22px;
+    -webkit-border-bottom-left-radius:22px;
+    -moz-border-radius-bottomright:22px;
+    -moz-border-radius-bottomleft:22px;
+    border-bottom-right-radius:22px;
+    border-bottom-left-radius:22px;
+    background:black;
+    display:inline-block;
+    margin-left:6px;
+    font-size:1px;
+    -webkit-transition:0.1s all ease-in;
+    -moz-transition:0.1s all ease-in;
+    -ms-transition:0.1s all ease-in;
+    -o-transition:0.1s all ease-in;
+    transition:0.1s all ease-in;
+    position:relative;
+    float:right
+}
+.social-btn:hover{
+    cursor:pointer
+}
+.share-button-wrap{
+    padding:10px 0;
+    background:#000;
+    -webkit-border-top-left-radius:20px;
+    -webkit-border-bottom-left-radius:20px;
+    -moz-border-radius-topleft:20px;
+    -moz-border-radius-bottomleft:20px;
+    border-top-left-radius:20px;
+    border-bottom-left-radius:20px;
+    width:150px;
+    display:none;
+    overflow:hidden;
+    float:right;
+    margin-top:-62px;
+    position:relative
+}
+.div-facebook{
+    right:224px
+}
+.div-twitter{
+    right:173px
+}
+.div-google{
+    right:122px
+}
+.div-pinterest{
+    right:72px
+}
+.the-socials .div-embed{
+    right:0px
+}
+.a-facebook{
+    background:url("../img/a-facebook.png") #000 no-repeat center center;
+    height:25px;
+    z-index:20
+}
+.div-share:hover .a-facebook{
+    background-color:#38559a;
+    padding-top:60px
+}
+.div-facebook .share-button-wrap{
+    background:#38559a;
+    z-index:19
+}
+.a-twitter{
+    background:url("../img/a-twitter.png") #000 no-repeat center center;
+    height:21px;
+    z-index:22
+}
+.div-share:hover .a-twitter{
+    background-color:#00a9ec;
+    padding-top:60px
+}
+.div-twitter .share-button-wrap{
+    background:#00a9ec;
+    z-index:21
+}
+.a-google{
+    background:url("../img/a-google.png") #000 no-repeat center center;
+    height:25px;
+    z-index:24
+}
+.div-share:hover .a-google{
+    background-color:#d7492a;
+    padding-top:60px
+}
+.div-google .share-button-wrap{
+    background:#d7492a;
+    z-index:23
+}
+.a-pinterest{
+    background:url("../img/a-pinterest.png") #000 no-repeat center center;
+    height:25px;
+    z-index:26
+}
+.div-share:hover .a-pinterest{
+    background-color:#bd2434;
+    padding-top:60px
+}
+.div-pinterest .share-button-wrap{
+    background:#bd2434;
+    z-index:25
+}
+.a-embed{
+    font-size:16px;
+    padding-top:14px;
+    padding-left:12px;
+    padding-right:12px;
+    z-index:28
+}
+.div-embed:hover .a-embed{
+    background-color:#5a5a5a
+}
+.div-embed .share-button-wrap{
+    background-color:#5a5a5a;
+    z-index:27;
+    display:none;
+    -webkit-border-bottom-right-radius:20px;
+    -moz-border-radius-bottomright:20px;
+    border-bottom-right-radius:20px;
+    width:342px;
+    padding-right:80px;
+    padding-left:10px
+}
+.div-embed:hover .share-button-wrap{
+    width:342px
+}
+.div-embed p{
+    font-size:13px;
+    margin:0px 0px 6px 0
+}
+.div-embed textarea{
+    font-size:10px;
+    color:#000;
+    padding:5px;
+    width:260px;
+    height:120px;
+    background:#7f7f7f;
+    border:none
+}
+.header-outer{
+    color:#fff;
+    text-align:center;
+    padding-left:8px;
+    padding-right:8px;
+    padding-bottom:8px;
+    background:rgba(0,0,0,0.3);
+    margin-left:20px;
+    -webkit-border-bottom-right-radius:22px;
+    -webkit-border-bottom-left-radius:22px;
+    -moz-border-radius-bottomright:22px;
+    -moz-border-radius-bottomleft:22px;
+    border-bottom-right-radius:22px;
+    border-bottom-left-radius:22px;
+    display:inline-block;
+    position:relative;
+    z-index:2
+}
+.header{
+    width:250px;
+    background:#000;
+    padding:16px 14px 1px 14px;
+    -webkit-border-bottom-right-radius:22px;
+    -webkit-border-bottom-left-radius:22px;
+    -moz-border-radius-bottomright:22px;
+    -moz-border-radius-bottomleft:22px;
+    border-bottom-right-radius:22px;
+    border-bottom-left-radius:22px
+}
+.header p{
+    margin:5px
+}
+.header .small-hr{
+    margin-top:0;
+    margin-bottom:0;
+    border-top:1px solid #fff
+}
+.h2-smoking-lung{
+    background:url("../img/h2-smoking-lung.png");
+    width:204px;
+    height:23px;
+    margin:0 auto 10px auto
+}
+.health-online a{
+    background:url("../img/health-online.png");
+    width:130px;
+    height:15px;
+    position:absolute;
+    bottom:20px;
+    margin:0;
+    left:20px
+}
+.info-items{
+    display:none
+}
+.anchor-point{
+    position:absolute;
+    display:block;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    border-radius:50%;
+    width:34px;
+    height:34px;
+    padding:8px;
+    background:#000;
+    background:rgba(0,0,0,0.4);
+    z-index:40;
+    -webkit-webkit-transitions:all 1s ease-in;
+    -moz-webkit-transitions:all 1s ease-in;
+    -ms-webkit-transitions:all 1s ease-in;
+    -o-webkit-transitions:all 1s ease-in;
+    webkit-transitions:all 1s ease-in
+}
+.no-touch .anchor-point:hover{
+    cursor:pointer;
+    padding:6px;
+    width:36px;
+    height:36px
+}
+.anchor-inner{
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    border-radius:50%;
+    background:#d6d6d6;
+    height:100%;
+    width:100%;
+    position:relative;
+    z-index:60
+}
+.animation-anchor{
+    background:rgba(49,132,0,0.3);
+    width:44px;
+    height:44px;
+    padding:12px
+}
+.no-touch .animation-anchor:hover{
+    background:rgba(0,0,0,0.4);
+    width:44px;
+    height:44px;
+    padding:12px
+}
+.no-touch .animation-anchor:hover .anchor-inner{
+    background:rgba(49,132,0,0.3)
+}
+.animation-anchor .anchor-inner{
+    background:#716e49;
+    background:rgba(0,0,0,0.4)
+}
+.text1-anchor,.smokers-text1-anchor{
+    top:60px;
+    left:342px
+}
+.text2-anchor,.smokers-text2-anchor{
+    top:380px;
+    left:230px
+}
+.cilia-anchor,.smokers-cilia-anchor{
+    top:155px;
+    left:355px
+}
+.bronchi-anchor,.smokers-bronchi-anchor{
+    top:240px;
+    left:238px
+}
+.alveoli-anchor,.smokers-alveoli-anchor{
+    top:448px;
+    left:572px
+}
+.info-box{
+    font-size:18px;
+    color:#fff;
+    background:rgba(49,132,0,0.2);
+    padding:6px;
+    display:inline-block;
+    -webkit-border-radius:24px;
+    -moz-border-radius:24px;
+    border-radius:24px;
+    position:absolute;
+    z-index:30;
+    display:none;
+    top:-12px;
+    left:-12px
+}
+.info-box .info-box-inner{
+    background:#716e49;
+    background:rgba(0,0,0,0.7);
+    padding:12px;
+    -webkit-border-radius:24px;
+    -moz-border-radius:24px;
+    border-radius:24px;
+    padding-left:50px
+}
+.info-box .info-box-inner p{
+    margin:0
+}
+.info-text1{
+    width:320px
+}
+.animated-image-image{
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    border-radius:50%;
+    -moz-background-clip:padding;
+    -webkit-background-clip:padding;
+    background-clip:padding-box;
+    padding:12px;
+    background-color:0,0,0;
+    background-color:rgba(0,0,0,0.4);
+    height:196px;
+    width:196px;
+    -webkit-box-sizing:content-box;
+    -moz-box-sizing:content-box;
+    box-sizing:content-box;
+    position:relative;
+    z-index:100
+}
+.healthy-cilia-wrap{
+    display:none;
+    position:absolute;
+    top:10px;
+    right:102px
+}
+.healthy-cilia-wrap .info-box{
+    position:absolute;
+    top:250px;
+    left:-60px;
+    width:380px;
+    z-index:100
+}
+.healthy-cilia-wrap .info-box-inner{
+    padding-left:12px
+}
+.image-healthy-cilia{
+    background-image:url("../img/cilia-healthy.gif");
+    display:block;
+    height:196px;
+    width:196px;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    border-radius:50%
+}
+.healthy-bronchi-wrap{
+    display:none;
+    position:absolute;
+    top:80px;
+    left:40px
+}
+.healthy-bronchi-wrap .info-box{
+    position:absolute;
+    top:125px;
+    left:250px;
+    width:400px;
+    z-index:100
+}
+.healthy-bronchi-wrap .info-box-inner{
+    padding-left:12px
+}
+.image-healthy-bronchi{
+    background-image:url("../img/bronchi-healthy.gif");
+    display:block;
+    height:196px;
+    width:196px;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    border-radius:50%
+}
+.healthy-alveoli-wrap{
+    display:none;
+    position:absolute;
+    top:240px;
+    left:400px
+}
+.healthy-alveoli-wrap .info-box{
+    position:absolute;
+    top:50px;
+    left:-360px;
+    width:340px;
+    z-index:100
+}
+.healthy-alveoli-wrap .info-box-inner{
+    padding-left:12px
+}
+.image-healthy-alveoli{
+    background-image:url("../img/alveoli-healthy.gif");
+    display:block;
+    height:196px;
+    width:196px;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    border-radius:50%
+}
+.lighter-wrap{
+    z-index:2000;
+    position:absolute;
+    right:-126px;
+    width:194px;
+    top:290px;
+    height:200px;
+    -webkit-border-top-left-radius:24px;
+    -webkit-border-bottom-left-radius:24px;
+    -moz-border-radius-topleft:24px;
+    -moz-border-radius-bottomleft:24px;
+    border-top-left-radius:24px;
+    border-bottom-left-radius:24px;
+    background:#000;
+    background:rgba(0,0,0,0.4);
+    padding:10px;
+    display:none;
+    overflow:hidden
+}
+@-webkit-keyframes lighter-animate{
+    0%{
+        right:-126px
+    }
+    70%{
+        right:-126px
+    }
+    80%{
+        right:-86px
+    }
+    90%{
+        right:-126px
+    }
+    95%{
+        right:-86px
+    }
+    100%{
+        right:-126px
+    }
+}
+@-moz-keyframes lighter-animate{
+    0%{
+        right:-126px
+    }
+    70%{
+        right:-126px
+    }
+    80%{
+        right:-86px
+    }
+    90%{
+        right:-126px
+    }
+    95%{
+        right:-86px
+    }
+    100%{
+        right:-126px
+    }
+}
+@-o-keyframes lighter-animate{
+    0%{
+        right:-126px
+    }
+    70%{
+        right:-126px
+    }
+    80%{
+        right:-86px
+    }
+    90%{
+        right:-126px
+    }
+    95%{
+        right:-86px
+    }
+    100%{
+        right:-126px
+    }
+}
+@keyframes lighter-animate{
+    0%{
+        right:-126px
+    }
+    70%{
+        right:-126px
+    }
+    80%{
+        right:-86px
+    }
+    90%{
+        right:-126px
+    }
+    95%{
+        right:-86px
+    }
+    100%{
+        right:-126px
+    }
+}
+.lighter-animate{
+    -webkit-animation:lighter-animate 4s infinite;
+    -moz-animation:lighter-animate 4s infinite;
+    -o-animation:lighter-animate 4s infinite;
+    animation:lighter-animate 4s infinite
+}
+.lighter-wrap:hover{
+    cursor:pointer
+}
+.lighter-wrap-inner{
+    background:#000;
+    height:100%;
+    width:100%;
+    -webkit-border-top-left-radius:16px;
+    -webkit-border-bottom-left-radius:16px;
+    -moz-border-radius-topleft:16px;
+    -moz-border-radius-bottomleft:16px;
+    border-top-left-radius:16px;
+    border-bottom-left-radius:16px
+}
+.lighter-bottom{
+    background:url("../img/light-bottom.png");
+    display:block;
+    width:68px;
+    height:101px;
+    left:30px;
+    top:75px;
+    position:absolute;
+    z-index:3
+}
+.lighter-lid{
+    display:block;
+    background:url("../img/lighter-lid.png");
+    width:81px;
+    height:65px;
+    position:absolute;
+    top:83px;
+    left:98px;
+    -webkit-transform:rotate(-130deg);
+    -moz-transform:rotate(-130deg);
+    -ms-transform:rotate(-130deg);
+    -o-transform:rotate(-130deg);
+    transform:rotate(-130deg);
+    -webkit-transform-origin:left 50%;
+    -moz-transform-origin:left 50%;
+    -ms-transform-origin:left 50%;
+    -o-transform-origin:left 50%;
+    transform-origin:left 50%;
+    z-index:5;
+    -webkit-transition:0.3s all ease-in;
+    -moz-transition:0.3s all ease-in;
+    -ms-transition:0.3s all ease-in;
+    -o-transition:0.3s all ease-in;
+    transition:0.3s all ease-in
+}
+.cigarette{
+    display:block;
+    background:url("../img/cigarette.png");
+    width:105px;
+    height:15px;
+    position:absolute;
+    top:50px;
+    left:290px
+}
+.lighter-flame{
+    display:block;
+    background:url("../img/lighter-flame.png");
+    width:21px;
+    height:75px;
+    position:absolute;
+    left:56px;
+    top:15px;
+    z-index:2;
+    display:none
+}
+.flipped-lid{
+    -webkit-transform:rotate(0deg);
+    -moz-transform:rotate(0deg);
+    -ms-transform:rotate(0deg);
+    -o-transform:rotate(0deg);
+    transform:rotate(0deg)
+}
+.flipped-closed{
+    -webkit-transform:rotate(-130deg);
+    -moz-transform:rotate(-130deg);
+    -ms-transform:rotate(-130deg);
+    -o-transform:rotate(-130deg);
+    transform:rotate(-130deg)
+}
+.white-out{
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background:#fff;
+    background:rgba(255,255,255,0.8);
+    z-index:3000;
+    display:none
+}
+.fgnd-smoke{
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background:url("../img/fgnd-smoke.png") center center;
+    background-size:cover;
+    z-index:3000;
+    display:none
+}
+.bg-smoke{
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background:url("../img/bg-smoke.png") center center;
+    background-size:cover;
+    display:none
+}
+.no-touch .moving-smoke{
+    -webkit-animation:moving-smoke 6s infinite;
+    -moz-animation:moving-smoke 6s infinite;
+    -o-animation:moving-smoke 6s infinite;
+    animation:moving-smoke 6s infinite
+}
+@-webkit-keyframes moving-smoke{
+    0%{
+        -webkit-transform:scale(1);
+        left:0px
+    }
+    40%{
+        -webkit-transform:scale(1);
+        left:0px
+    }
+    70%{
+        -webkit-transform:scale(1.03);
+        left:20px
+    }
+    100%{
+        -webkit-transform:scale(1);
+        left:0px
+    }
+}
+@-moz-keyframes moving-smoke{
+    0%{
+        -moz-transform:scale(1);
+        left:0px
+    }
+    40%{
+        -moz-transform:scale(1);
+        left:0px
+    }
+    70%{
+        -moz-transform:scale(1.03);
+        left:20px
+    }
+    100%{
+        -moz-transform:scale(1);
+        left:0px
+    }
+}
+@-o-keyframes moving-smoke{
+    0%{
+        -o-transform:scale(1);
+        left:0px
+    }
+    40%{
+        -o-transform:scale(1);
+        left:0px
+    }
+    70%{
+        -o-transform:scale(1.03);
+        left:20px
+    }
+    100%{
+        -o-transform:scale(1);
+        left:0px
+    }
+}
+@keyframes moving-smoke{
+    0%{
+        transform:scale(1);
+        left:0px
+    }
+    40%{
+        transform:scale(1);
+        left:0px
+    }
+    70%{
+        transform:scale(1.03);
+        left:20px
+    }
+    100%{
+        transform:scale(1);
+        left:0px
+    }
+}
+.no-touch .moving-fgnd-smoke{
+    -webkit-animation:moving-fgnd-smoke 6s infinite;
+    -moz-animation:moving-fgnd-smoke 6s infinite;
+    -o-animation:moving-fgnd-smoke 6s infinite;
+    animation:moving-fgnd-smoke 6s infinite
+}
+@-webkit-keyframes moving-fgnd-smoke{
+    0%{
+        -webkit-transform:scale(1);
+        right:0px
+    }
+    30%{
+        -webkit-transform:scale(1.02);
+        right:20px
+    }
+    70%{
+        -webkit-transform:scale(1);
+        right:0px
+    }
+    100%{
+        -webkit-transform:scale(1);
+        right:0px
+    }
+}
+@-moz-keyframes moving-fgnd-smoke{
+    0%{
+        -moz-transform:scale(1);
+        right:0px
+    }
+    30%{
+        -moz-transform:scale(1.02);
+        right:20px
+    }
+    70%{
+        -moz-transform:scale(1);
+        right:0px
+    }
+    100%{
+        -moz-transform:scale(1);
+        right:0px
+    }
+}
+@-o-keyframes moving-fgnd-smoke{
+    0%{
+        -o-transform:scale(1);
+        right:0px
+    }
+    30%{
+        -o-transform:scale(1.02);
+        right:20px
+    }
+    70%{
+        -o-transform:scale(1);
+        right:0px
+    }
+    100%{
+        -o-transform:scale(1);
+        right:0px
+    }
+}
+@keyframes moving-fgnd-smoke{
+    0%{
+        transform:scale(1);
+        right:0px
+    }
+    30%{
+        transform:scale(1.02);
+        right:20px
+    }
+    70%{
+        transform:scale(1);
+        right:0px
+    }
+    100%{
+        transform:scale(1);
+        right:0px
+    }
+}
+.healthy-lungs .smokers-cilia,.healthy-lungs .smokers-lung-left,.healthy-lungs .smokers-lung-right,.healthy-lungs .smokers-bits-left,.healthy-lungs .smokers-bits-right,.healthy-lungs .smokers-text1-anchor,.healthy-lungs .smokers-text2-anchor,.healthy-lungs .smokers-text3-anchor,.healthy-lungs .smokers-cilia-anchor,.healthy-lungs .smokers-bronchi-anchor,.healthy-lungs .smokers-alveoli-anchor{
+    display:none !important
+}
+.smokey-lungs .healthy-cilia,.smokey-lungs .healthy-bits-left,.smokey-lungs .healthy-bits-right,.smokey-lungs .lung-left,.smokey-lungs .lung-right,.smokey-lungs .text1-anchor,.smokey-lungs .text2-anchor,.smokey-lungs .cilia-anchor,.smokey-lungs .bronchi-anchor,.smokey-lungs .alveoli-anchor{
+    display:none !important
+}
+.smokers-cilia{
+    background:url("../img/smokers-cilia.png");
+    width:159px;
+    height:322px;
+    margin-left:-78px;
+    -webkit-animation:cilia-breathing 1.5s infinite;
+    -moz-animation:cilia-breathing 1.5s infinite;
+    -o-animation:cilia-breathing 1.5s infinite;
+    animation:cilia-breathing 1.5s infinite
+}
+.smokers-lung-left{
+    left:27px;
+    height:513px;
+    width:302px;
+    top:113px;
+    z-index:1;
+    text-align:center
+}
+.smokers-lung-left img{
+    -webkit-animation:lungleft 1.5s infinite;
+    -moz-animation:lungleft 1.5s infinite;
+    -o-animation:lungleft 1.5s infinite;
+    animation:lungleft 1.5s infinite
+}
+.smokers-lung-right{
+    left:365px;
+    top:113px;
+    height:514px;
+    width:303px;
+    z-index:1;
+    text-align:center
+}
+.smokers-lung-right img{
+    -webkit-animation:lungright 1.5s infinite;
+    -moz-animation:lungright 1.5s infinite;
+    -o-animation:lungright 1.5s infinite;
+    animation:lungright 1.5s infinite
+}
+.smokey-lungs{
+    background-image:url(../img/bg-smokers.jpg)
+}
+.smokers-lung-bits{
+    display:block;
+    position:absolute;
+    top:128px
+}
+.smokers-lung-bits img{
+    display:block;
+    position:absolute;
+    top:0;
+    left:0
+}
+.smokers-bits-left{
+    height:440px;
+    width:260px;
+    left:47px;
+    text-align:right
+}
+.smokers-bits-right{
+    height:375px;
+    width:246px;
+    left:382px;
+    top:161px;
+    text-align:left
+}
+.smokers-bits-left img.lung-bit-1{
+    -webkit-animation:bitsleft1 1.5s infinite;
+    -moz-animation:bitsleft1 1.5s infinite;
+    -o-animation:bitsleft1 1.5s infinite;
+    animation:bitsleft1 1.5s infinite
+}
+.smokers-bits-left img.lung-bit-2{
+    -webkit-animation:bitsleft2 1.5s infinite;
+    -moz-animation:bitsleft2 1.5s infinite;
+    -o-animation:bitsleft2 1.5s infinite;
+    animation:bitsleft2 1.5s infinite
+}
+.smokers-bits-left img.lung-bit-3{
+    -webkit-animation:bitsleft3 1.5s infinite;
+    -moz-animation:bitsleft3 1.5s infinite;
+    -o-animation:bitsleft3 1.5s infinite;
+    animation:bitsleft3 1.5s infinite
+}
+.smokers-bits-left img.lung-bit-4{
+    -webkit-animation:bitsleft4 1.5s infinite;
+    -moz-animation:bitsleft4 1.5s infinite;
+    -o-animation:bitsleft4 1.5s infinite;
+    animation:bitsleft4 1.5s infinite
+}
+.smokers-bits-right img.lung-bit-1{
+    -webkit-animation:bitsright1 1.5s infinite;
+    -moz-animation:bitsright1 1.5s infinite;
+    -o-animation:bitsright1 1.5s infinite;
+    animation:bitsright1 1.5s infinite
+}
+.smokers-bits-right img.lung-bit-2{
+    -webkit-animation:bitsright2 1.5s infinite;
+    -moz-animation:bitsright2 1.5s infinite;
+    -o-animation:bitsright2 1.5s infinite;
+    animation:bitsright2 1.5s infinite
+}
+.smokers-bits-right img.lung-bit-3{
+    -webkit-animation:bitsright3 1.5s infinite;
+    -moz-animation:bitsright3 1.5s infinite;
+    -o-animation:bitsright3 1.5s infinite;
+    animation:bitsright3 1.5s infinite
+}
+.smokers-bits-right img.lung-bit-4{
+    -webkit-animation:bitsright4 1.5s infinite;
+    -moz-animation:bitsright4 1.5s infinite;
+    -o-animation:bitsright4 1.5s infinite;
+    animation:bitsright4 1.5s infinite
+}
+.smokey-lungs .animation-anchor{
+    background:red;
+    background:rgba(255,40,40,0.5)
+}
+.smokey-lungs .info-box{
+    background:rgba(255,40,40,0.5)
+}
+.smokers-text3-anchor{
+    top:470px;
+    left:90px
+}
+.smokers-text3-anchor .info-text3{
+    width:420px
+}
+.smokers-cilia-wrap{
+    display:none;
+    position:absolute;
+    top:10px;
+    right:102px
+}
+.smokers-cilia-wrap .info-box{
+    position:absolute;
+    top:250px;
+    left:-60px;
+    width:380px;
+    z-index:100
+}
+.smokers-cilia-wrap .info-box-inner{
+    padding-left:12px
+}
+.image-smokers-cilia{
+    background-image:url("../img/cilia-smokers.gif");
+    display:block;
+    height:196px;
+    width:196px;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    border-radius:50%
+}
+.smokers-bronchi-wrap{
+    display:none;
+    position:absolute;
+    top:80px;
+    left:40px
+}
+.smokers-bronchi-wrap .info-box{
+    position:absolute;
+    top:125px;
+    left:250px;
+    width:400px;
+    z-index:100
+}
+.smokers-bronchi-wrap .info-box-inner{
+    padding-left:12px
+}
+.image-smokers-bronchi{
+    background-image:url("../img/bronchi-smokers.gif");
+    display:block;
+    height:196px;
+    width:196px;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    border-radius:50%
+}
+.smokers-alveoli-wrap{
+    display:none;
+    position:absolute;
+    top:240px;
+    left:400px
+}
+.smokers-alveoli-wrap .info-box{
+    position:absolute;
+    top:50px;
+    left:-360px;
+    width:340px;
+    z-index:100
+}
+.smokers-alveoli-wrap .info-box-inner{
+    padding-left:12px
+}
+.image-smokers-alveoli{
+    background-image:url("../img/alveoli-smokers.gif");
+    display:block;
+    height:196px;
+    width:196px;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    border-radius:50%
+}
+.no-touch .smokey-lungs .animation-anchor:hover{
+    background:rgba(0,0,0,0.4);
+    width:44px;
+    height:44px;
+    padding:12px
+}
+.no-touch .smokey-lungs .animation-anchor:hover .anchor-inner{
+    background:rgba(255,40,40,0.5)
+}
+.smokers-lung-shadows{
+    display:none
+}
+.smokey-lungs .lung-shadows-breathing{
+    -webkit-animation:lungshadows 1.5s infinite;
+    -moz-animation:lungshadows 1.5s infinite;
+    -o-animation:lungshadows 1.5s infinite;
+    animation:lungshadows 1.5s infinite
+}
+.footer{
+    position:absolute;
+    bottom:0;
+    right:20px;
+    width:240px;
+    color:#fff;
+    text-align:center;
+    display:none;
+    font-size:13px
+}
+.footer a{
+    color:#fff;
+    font-family:'AmasisMTW01-BoldItalic';
+    text-decoration:none
+}
+.footer a:hover{
+    text-decoration:underline
+}
+.footer h4{
+    font-weight:normal;
+    background:#000;
+    -webkit-border-radius:20px 20px 0px 0;
+    -moz-border-radius:20px 20px 0px 0;
+    border-radius:20px 20px 0px 0;
+    padding:10px 10px 5px 10px;
+    margin:0;
+    font-size:15px;
+    display:inline-block;
+    -webkit-transition:0.3s all ease-in;
+    -moz-transition:0.3s all ease-in;
+    -ms-transition:0.3s all ease-in;
+    -o-transition:0.3s all ease-in;
+    transition:0.3s all ease-in
+}
+.footer-cont-wrap{
+    -webkit-border-radius:20px 20px 0px 20px;
+    -moz-border-radius:20px 20px 0px 20px;
+    border-radius:20px 20px 0px 20px;
+    background:#5b5b5b;
+    display:block;
+    position:absolute;
+    bottom:-500px;
+    -webkit-transition:0.1s all ease-in;
+    -moz-transition:0.1s all ease-in;
+    -ms-transition:0.1s all ease-in;
+    -o-transition:0.1s all ease-in;
+    transition:0.1s all ease-in;
+    width:200px;
+    right:0;
+    padding:10px;
+    padding-bottom:20px
+}
+.div-sources{
+    position:absolute;
+    bottom:0;
+    right:0px
+}
+.div-sources .footer-cont-wrap{
+    right:0
+}
+.div-disclaimer{
+    position:absolute;
+    bottom:0;
+    right:76px
+}
+.div-disclaimer .footer-cont-wrap{
+    right:0
+}
+.div-sources:hover h4,.div-disclaimer:hover h4{
+    background:#5d5d5d
+}
+.div-sources:hover .footer-cont-wrap{
+    bottom:0px
+}
+.div-disclaimer:hover .footer-cont-wrap{
+    bottom:0px
+}
+.prompt{
+    -webkit-border-radius:24px 0 0 24px;
+    -moz-border-radius:24px 0 0 24px;
+    border-radius:24px 0 0 24px;
+    background:#6b252a;
+    padding:9px 0 9px 9px;
+    display:inline-block;
+    position:absolute;
+    right:-150px;
+    top:155px;
+    color:#fff;
+    text-align:center;
+    width:150px;
+    z-index:15
+}
+.prompt p{
+    margin:0 0 5px 0
+}
+.prompt-inner{
+    -webkit-border-radius:24px 0 0 24px;
+    -moz-border-radius:24px 0 0 24px;
+    border-radius:24px 0 0 24px;
+    padding:10px;
+    background:#1e090a
+}
+.prompt-arrow{
+    background:url("../img/prompt-arrow.png");
+    width:30px;
+    height:26px;
+    display:block;
+    margin:0 auto
+}
+ 
